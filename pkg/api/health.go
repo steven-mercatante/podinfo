@@ -15,7 +15,7 @@ import (
 // @Success 200 {string} string "OK"
 func (s *Server) healthzHandler(w http.ResponseWriter, r *http.Request) {
 	if atomic.LoadInt32(&healthy) == 1 {
-		s.JSONResponse(w, r, map[string]string{"status": "OK!!"})
+		s.JSONResponse(w, r, map[string]string{"status": "OK (rev2)"})
 		return
 	}
 	w.WriteHeader(http.StatusServiceUnavailable)
